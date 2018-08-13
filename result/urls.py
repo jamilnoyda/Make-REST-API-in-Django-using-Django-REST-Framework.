@@ -23,7 +23,7 @@ router.register(r'marksheets', MarksheetViewSet)
 router.register(r'standards', StandardViewSet)
 
 urlpatterns = [
+    url(r'^$', views.index,  name="index"),
     url(r'api/', include(router.urls)),
-    url(r'', views.index,  name="index"),
 
 ]
