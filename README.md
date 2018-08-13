@@ -15,7 +15,7 @@ This is an example project to illustrate an implementation of REST API in Django
 First, clone the repository to your local machine:
 
 ```bash
-https://github.com/jamilnoyda/Make-REST-API-in-Django-using-Django-REST-Framework..git
+git clone https://github.com/jamilnoyda/Make-REST-API-in-Django-using-Django-REST-Framework..git
 ```
 
 API Root:
