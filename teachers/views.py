@@ -9,10 +9,32 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 
-from forms import SendPDFForm, SignUpForm, ProfileForm
+from forms import SendPDFForm, SignUpForm, ProfileForm, StandardForm
 from result.models import Marksheet
 
 # Create your views here.
+
+
+def standard(request):
+
+    if request.user.is_staff:
+        if request.method == 'POST':
+
+            form = StandardForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Standard Successfully added ')
+
+                return redirect('/teachers/standard/')
+            else:
+                messages.success(request, 'Invalid !')
+                return redirect('/teachers/standard/')
+        else:
+            form = StandardForm()
+            return render(request, 'teachers/teachers.html', {
+                'form': form, })
+    else:
+        return redirect(settings.LOGIN_REDIRECT_URL)
 
 
 class MarksheetDetailView(LoginRequiredMixin, DetailView):

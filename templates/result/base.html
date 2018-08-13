@@ -21,6 +21,7 @@
         {%if user.is_staff or user.is_admin  %}
           <li><a href="{% url 'teachers:marksheet-list'  %}">Uploaded Marksheets</a></li>
           <li><a href="{% url 'teachers:teachers'  %}">Upload Marksheet</a></li>
+          <li><a href="{% url 'teachers:standard'  %}">Add Standard</a></li>
          
         {% else %}
           <li><a href="{% url 'students:marksheet-list' %}">View Marksheet</a></li>

@@ -8,7 +8,16 @@ from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 
 from accounts.models import Profile
+from django.forms import ModelForm
+
 from result.models import Standard, Marksheet
+
+
+class StandardForm(ModelForm):
+
+    class Meta:
+        model = Standard
+        fields = '__all__'
 
 
 class SendPDFForm(forms.Form):
@@ -32,7 +41,8 @@ class SendPDFForm(forms.Form):
         try:
             student_obj = Profile.objects.filter(
                 user__is_active=True, enroll_number=data['enroll_number']).first()
-            marksheet = Marksheet(standard=data['select_standard'], student_name=student_obj, pdf_file=data['pdf_file'])
+            marksheet = Marksheet(standard=data[
+                                  'select_standard'], student_name=student_obj, pdf_file=data['pdf_file'])
             marksheet.save()
             messages.success(request, 'Marksheet for Enrollment Number {enroll_number} has been uploaded and mail has been sent successfully.'.format(
                 enroll_number=data['enroll_number']))

@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'marksheet/$', views.MarksheetListView.as_view(),
         name='marksheet-list'),
     url(r'^signup/$', views.signup, name='signup'),
+    url(r'^standard/$', views.standard, name='standard'),
     url(r'$', views.home, name="teachers"),
 ]
