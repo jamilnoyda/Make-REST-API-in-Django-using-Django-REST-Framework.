@@ -1,0 +1,18 @@
+{% extends 'result/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+	Sign Up for Teacher
+{% endblock %}
+
+{% block content %}
+
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    
+     {{ form|crispy }}
+
+    {{ profile_form|crispy }}
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}

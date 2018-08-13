@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}Python School{% endblock %}</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+<div id="page">
+  <div id="header">
+    <div id="section">
+      <div class="logo">Python School</div>
+      <span>python@schools.com <br />
+      <br />
+      + 91 90874 58904</span> </div>
+    <ul class="nav-bottom">
+      <li><a href="/">Home</a></li>
+      {% if user.is_authenticated %}
+        {%if user.is_staff or user.is_admin  %}
+          <li><a href="{% url 'teachers:marksheet-list'  %}">Uploaded Marksheets</a></li>
+          <li><a href="{% url 'teachers:teachers'  %}">Upload Marksheet</a></li>
+         
+        {% else %}
+          <li><a href="{% url 'students:marksheet-list' %}">View Marksheet</a></li>
+        {% endif%} 
+        <li><a href="{% url 'accounts:logout'  %}">logout</a></li>
+      {% else %}
+        <li><a href="{% url 'accounts:login'  %}">login</a></li>
+        <li><a href="{% url 'accounts:signup'  %}">Sign Up for Student</a></li>
+        <li><a href="{% url 'teachers:signup'  %}">Sign Up for Teacher</a></li>
+
+      {% endif %}
+    </ul>
+    
+  </div>
+  <div id="content">
+    <div id="home">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+  </div>
+  <div id="footer">
+    <div>
+      <div id="connect"> <a href="#"><img src="{% static 'images/icon-facebook.gif' %}" alt="" /></a> <a href="#"><img src="{% static 'images/icon-twitter.gif' %}" alt="" /></a> <a href="#"><img src="{% static  'images/icon-youtube.gif' %}" alt="" /></a> </div>
+      <div class="section">
+        <ul>
+          <li><a href="/">Home</a></li>
+        </ul>
+        <p>Copyright &copy; Python School</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</html>

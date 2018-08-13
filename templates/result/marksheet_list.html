@@ -1,0 +1,16 @@
+{% extends 'result/base.html' %}
+{% block title %}
+	Marksheets
+{% endblock %}
+{% block content %}
+
+<h1>Marksheets</h1>
+
+<ul class="marksheet-ul">
+  {% for marksheet in marksheets %}
+    <li><a href="{{ marksheet.get_absolute_url }}">{{ marksheet.standard }}</a></li> 
+    {% empty %}
+        <li>No Marksheet yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

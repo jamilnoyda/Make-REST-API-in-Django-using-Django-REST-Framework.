@@ -1,0 +1,17 @@
+{% extends 'result/base.html' %}
+{% block title %}
+	Profile | {{ request.user.username }}
+{% endblock %}
+{% block content %}
+	<h1>Welocme {{ request.user.first_name }} to Python School</h1>
+	
+	<div class="profile-data">
+		<h3>Your Profile Information:</h3>
+		<p>Name : {{ request.user.first_name }} {{ request.user.last_name }}</p>
+		<p>Email id : {{ request.user.email }}</p>
+		{%if not user.is_staff or user.is_admin  %}
+	   		<p>Enrollment Number : {{ request.user.profile.enroll_number }}</p>		
+	    {% endif%} 
+ 	</div>
+{% endblock %}
+
