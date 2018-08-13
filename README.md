@@ -20,7 +20,7 @@ git clone https://github.com/sibtc/django-multiple-user-types-example.git
 
 API Root:
 http://127.0.0.1:8000/api/
-[!API Root:] (http://127.0.0.1:8000/api/)
+
 
 
 Install the requirements:
