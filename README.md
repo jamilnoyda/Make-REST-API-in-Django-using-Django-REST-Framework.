@@ -7,8 +7,7 @@ REST API in Django using Django REST Framework.
 [![Python Version](https://img.shields.io/badge/python-2.7-brightgreen.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-1.11-brightgreen.svg)](https://djangoproject.com)
 
-
-This is an example project to illustrate an implementation of REST API in Django using Django REST Framework with multiple user types. In this Django app, teachers can upload marksheet of student and send him  and students can sign up and can see his marksheet
+This is an example project to illustrate an implementation of REST API in Django using Django REST Framework with multiple user types. In this Django app, teachers can upload and send marksheets of students. Students can see their marksheet if they are registered on the application or can download it directly from the email.
 
 # Running the Project Locally
 
