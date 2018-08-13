@@ -6,6 +6,10 @@
 
  <h2> Name: {{ marksheet.student_name.user.first_name }}</h2>
  <h2>Standard: {{ marksheet.standard }}</h2>
- <h2>Click to Download Marksheet: <a href="{{ marksheet.pdf_file.url }}">marksheet.pdf_file</a></h2>
+ <h2> Marksheet:</h2>
+
+ <object data="{{ marksheet.pdf_file.url }}" type="application/pdf">
+        <embed src="{{ marksheet.pdf_file.url }}" type="application/pdf" />
+    </object>
    
 {% endblock %}

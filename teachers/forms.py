@@ -48,11 +48,11 @@ class SendPDFForm(forms.Form):
                 enroll_number=data['enroll_number']))
         except IntegrityError:
             messages.success(request, 'Enter Valid Enroll Number')
-            return redirect('/teachers/home')
+            return redirect('/teachers/')
         except:
             messages.success(
                 request, 'Something went wrong! Please, try again')
-            return redirect('/teachers/home')
+            return redirect('/teachers/')
 
 
 class SignUpForm(UserCreationForm):
