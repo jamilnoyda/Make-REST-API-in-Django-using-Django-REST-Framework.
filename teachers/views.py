@@ -54,10 +54,10 @@ def home(request):
             form = SendPDFForm(request.POST, request.FILES)
             if form.is_valid():
                 form.save(request)
-                return redirect('/teachers/home')
+                return redirect('/teachers')
             else:
                 messages.success(request, 'Invalid File Format!')
-                return redirect('/teachers/home')
+                return redirect('/teachers')
         else:
             form = SendPDFForm()
             return render(request, 'teachers/teachers.html', {
