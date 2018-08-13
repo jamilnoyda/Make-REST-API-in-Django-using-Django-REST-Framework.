@@ -14,15 +14,18 @@ from accounts.models import Profile
 
 
 class Standard(models.Model):
-    name = models.CharField(max_length=20, help_text='Standard')
+    name = models.CharField(
+        max_length=20, help_text='add Standard for ex. Standard 1')
 
     def __unicode__(self):
         return self.name
 
 
 class Marksheet(models.Model):
-    standard = models.ForeignKey(Standard, on_delete=models.CASCADE, help_text='Select Standard')
-    uploaded_on = models.DateField(auto_now_add=True, help_text='File to Uploaded on')
+    standard = models.ForeignKey(
+        Standard, on_delete=models.CASCADE, help_text='Select Standard')
+    uploaded_on = models.DateField(
+        auto_now_add=True, help_text='File to Uploaded on')
     student_name = models.ForeignKey(
         Profile, related_name='marksheets', on_delete=models.CASCADE, help_text='Student Name')
     pdf_file = models.FileField(unique=True, upload_to='uploads/%Y/%m/%d/', default="Error to Showing file",
@@ -50,9 +53,9 @@ def send_user_notification_callback(sender, **kwargs):
     user = instance.student_name.user
     email = user.email
     pdf_url = instance.pdf_file.url
-    import pdb; pdb.set_trace()
 
-    html_content = "Welcome %s to Python School. Your Marksheet is available.\nYou can download it from your account or click the link below to dowload:\nhttp://localhost:8000{url}".format(url=pdf_url)
+    html_content = "Welcome %s to Python School. Your Marksheet is available.\nYou can download it from your account or click the link below to dowload:\nhttp://localhost:8000{url}".format(
+        url=pdf_url)
 
     message = EmailMessage(subject='welcome', body=html_content % (
         user), to=[email])
