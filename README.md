@@ -17,7 +17,7 @@ First, clone the repository to your local machine:
 git clone https://github.com/jamilnoyda/Make-REST-API-in-Django-using-Django-REST-Framework..git
 ```
 
-API Root:
+Django REST API Root:
 http://127.0.0.1:8000/api/
 
 Teachers Root:
