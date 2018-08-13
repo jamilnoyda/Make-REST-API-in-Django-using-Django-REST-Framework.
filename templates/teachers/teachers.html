@@ -2,11 +2,10 @@
 {% block title %} Upload {%endblock%}
 
 {% block content %}
-	<h3>Upload Marksheet</h3>
 	<form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" id="submit">Upload</button>
+        <button type="submit" id="submit">Save</button>
         
         {% if messages %}
             <ul class=messages">
