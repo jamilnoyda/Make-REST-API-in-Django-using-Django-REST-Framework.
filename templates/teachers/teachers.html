@@ -6,7 +6,7 @@
 	<form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" id="submit">Upload</button>
+        <button type="submit" id="submit">Save</button>
         
         <p id="drp_error" style="color: red; font-size:18px;"></p>
         {% if messages %}
