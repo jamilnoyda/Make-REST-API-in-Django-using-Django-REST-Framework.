@@ -1,7 +1,7 @@
 ## Python School
 
-# Make-REST-API-in-Django-using-Django-REST-Framework.
-Make REST API in Django using Django REST Framework.
+# REST-API-in-Django-using-Django-REST-Framework.
+REST API in Django using Django REST Framework.
 
 
 [![Python Version](https://img.shields.io/badge/python-2.7-brightgreen.svg)](https://python.org)
@@ -10,13 +10,20 @@ Make REST API in Django using Django REST Framework.
 
 This is an example project to illustrate an implementation of REST API in Django using Django REST Framework with multiple user types. In this Django app, teachers can upload marksheet of student and send him  and students can sign up and can see his marksheet
 
-## Running the Project Locally
+# Running the Project Locally
 
 First, clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/sibtc/django-multiple-user-types-example.git
 ```
+
+API Root:
+
+```bash
+http://localhost:8000/api/
+```
+
 
 Install the requirements:
 
