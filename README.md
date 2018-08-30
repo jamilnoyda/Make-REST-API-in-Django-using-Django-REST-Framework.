@@ -26,6 +26,8 @@ http://127.0.0.1:8000/teachers/
 Admin Root:
 http://127.0.0.1:8000/admin/
 
+Student Root:
+http://127.0.0.1:8000/
 
 
 
