@@ -9,7 +9,7 @@ REST API in Django using Django REST Framework.
 
 This is an example project to illustrate an implementation of REST API in Django using Django REST Framework with multiple user types. In this Django app, teachers can upload and send marksheets of students. Students can see their marksheet if they are registered on the application or can download it directly from the email.
 
-##urls
+## urls
 
 Django REST API Root:
 http://127.0.0.1:8000/api/
